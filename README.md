@@ -1,4 +1,4 @@
-<h1> 18/04/2025 </h1>
+<h1 style="font-weight: bold"> 18/04/2025 </h1>
 - Commited the site web or whatever you call it 👍<br>
 - Made the header<br>
 - Made a background that has random genered stars around (aka just dots but thats what stars are)<br>
