@@ -1,0 +1,257 @@
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200;600;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap');
+
+:root {
+    --deep-purple: #240046;
+    --medium-purple: #5a189a;
+    --light-purple: #9d4edd;
+    --accent-purple: #c77dff;
+    --neon-purple: #e0aaff;
+    --dark-bg: #10002b;
+    --light-dark-bg: #3c096c;
+    --text-color: #e2d1f9;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+
+body {
+    background-color: var(--dark-bg);
+    color: var(--text-color);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+
+/* Header*/
+header {
+    position: relative;
+    width: 50%;
+    margin: 2rem auto;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1.5rem;
+    height: auto;
+    margin-bottom: 1rem;
+}
+
+.header-content {
+    position: relative;
+    z-index: 10;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.logo {
+    font-size: 3.2rem;
+    font-weight: 800;
+    color: var(--white);
+    letter-spacing: 6px;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+    position: relative;
+    display: inline-block;
+}
+
+.logo span {
+    position: relative;
+    display: inline-block;
+    color: var(--neon-purple);
+    animation: pulse 3s infinite;
+}
+
+.sub-title {
+    font-family: "Pixelify Sans", sans-serif;
+    color: var(--text-color);
+    font-size: 1rem;
+    font-weight: 300;
+    letter-spacing: 3px;
+    opacity: 0.8;
+    text-transform: uppercase;
+    animation: sub-pulse 2s infinite;
+}
+
+
+/* Main Content*/
+.container {
+    max-width: 100%;
+    height: calc(100vh - 200px);
+    margin: 0 auto;
+    padding: 1rem;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    overflow-y: auto;
+}
+
+
+/* The stars in the bg*/
+.cosmic-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1; 
+}
+
+.star {
+    position: absolute;
+    background-color: white;
+    border-radius: 50%;
+    animation: twinkle 4s infinite ease-in-out;
+}
+
+
+/* Icons*/
+.icon {
+    font-size: 1rem;
+    font-weight: 500;
+    margin-bottom: 1rem;
+    color: var(--neon-purple);
+    display: flex;
+    align-items: center;
+    position: absolute;
+    top: .5rem;
+    left: .5rem;
+}
+.icon svg {
+    margin-right: 8px;
+    width: 16px;
+    height: 16px;
+    fill: var(--neon-purple);
+}
+
+
+/* Chart*/
+.chart-container {
+    position: relative;
+    width: 80%;
+    height: auto;
+    margin: .5rem auto;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+
+    --s: 50px;
+    border: 4px solid rgba(157, 78, 221, 0.2);
+    border-radius: .8rem .1rem .8rem .1rem;
+    mask: 
+        conic-gradient(#000 0 0) content-box,
+        conic-gradient(at var(--s) var(--s),#0000 75%,#000 0) 
+        0 0/calc(100% - var(--s)) calc(100% - var(--s));
+}
+
+
+
+
+
+/* Table */
+.table-container {
+    position: relative;
+    width: 50%;
+    height: auto;
+    margin: .5rem auto;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+
+    --s: 50px;
+    border: 4px solid rgba(157, 78, 221, 0.2);
+    border-radius: .8rem .1rem .8rem .1rem;
+    mask: 
+        conic-gradient(#000 0 0) content-box,
+        conic-gradient(at var(--s) var(--s),#0000 75%,#000 0) 
+        0 0/calc(100% - var(--s)) calc(100% - var(--s));
+}
+
+.div-t {
+    border-radius: 12px;
+    overflow: hidden;
+    width: 100%;
+}
+
+.t-header {
+    display: flex;
+    background: linear-gradient(90deg, var(--medium-purple), var(--light-purple));
+    color: var(--text-color);
+    font-weight: 600;
+    padding: 1rem 1.5rem;
+    position: relative;
+}
+
+.t-row {
+    display: flex;
+    border-bottom: 1px solid rgba(157, 78, 221, 0.2);
+    background: rgba(60, 9, 108, 0.3);
+    transition: all 0.3s ease;
+}
+
+.t-row:last-child {border-bottom: none;}
+
+.t-cell {
+    flex: 1;
+    padding: 1rem 1.5rem;
+    text-align: center;
+    font-size: 0.95rem;
+}
+
+.t-cell:first-child {
+    color: var(--neon-purple);
+    font-weight: 500;
+    text-align: left;
+}
+
+.color {
+    background-color: green;
+}
+
+
+
+/* Animation keyframes*/
+@keyframes twinkle {
+    0%, 100% { opacity: 0.2; }
+    50% { opacity: 1; }
+}
+
+
+@keyframes pulse {
+    0%, 100% {
+        color: var(--neon-purple);
+        text-shadow: 0 0 10px rgba(224, 170, 255, 0.5);
+    }
+    50% {
+        color: var(--accent-purple);
+        text-shadow: 0 0 20px rgba(199, 125, 255, 0.8);
+    }
+}
+
+
+@keyframes sub-pulse {
+    0%, 100% {
+        color: var(--text-color);
+        text-shadow: 0 0 10px rgba(47, 123, 255, 0.5);
+    }
+    50% {
+        color: var(--text-color);
+        text-shadow: 0 0 20px rgba(47, 123, 255, 0.8);
+    }
+}
