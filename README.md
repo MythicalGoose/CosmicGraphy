@@ -1,4 +1,20 @@
-<h1 style="font-weight: bold"> 18/04/2025 </h1>
+<h1>Cosmic Graphy</h1>
+<h3>Nordpool data API (Krieviņa stundai)</h3>
+
+Cosmic Graphy is a Nordpool API data based site.<br>
+I got the insparations from- <br>
+
+     pintrest
+     
+     reddit (web development and web design)
+     
+     google (images)
+     
+     stackoverflow
+     
+     and mostly thought of the design my self :)
+
+<h2 style="font-weight: bold"> 18/04/2025 </h1>
 
 - Commited the site web or whatever you call it 👍<br>
 - Made the header<br>
@@ -9,7 +25,7 @@
 - Made the table, but still neeeds to be adjusted and some stuff added to it<br>
 - Made the containers have cool corner borders 💯<br>
 
-<h1 style="font-weight: bold"> 19/04/2025 </h1>
+<h2 style="font-weight: bold"> 19/04/2025 </h1>
 
 - Added hover effects for containers<br>
 - Finished the table design<br>
