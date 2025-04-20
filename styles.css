@@ -49,11 +49,7 @@
     background-color: rgba(79, 11, 142, 0.5);
     transform: translateX(5px);
 }
-.c-hover:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 20px rgba(157, 78, 221, 0.2);
-    backdrop-filter: blur(5px);
-}
+
 .chart-container:hover .icon svg,
 .table-container:hover .icon svg,
 .chart-container-circle:hover .icon svg {
@@ -64,13 +60,14 @@
 .chart-container:hover,
 .table-container:hover,
 .chart-container-circle:hover{
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(157, 78, 221, 0.2);
     border-color: rgba(199, 125, 255, 0.6);
 }
 
 .chart-container, .table-container, .chart-container-circle {
     transition: all 400ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
-
 
 
 /* Body*/
@@ -152,7 +149,7 @@ header {
 /* Main Content*/
 .container {
     max-width: 100%;
-    height: calc(100vh - 200px);
+    height: auto;
     margin: 0 auto;
     padding: 1rem;
     position: relative;
@@ -192,16 +189,19 @@ header {
     border-radius: 50%;
     animation: twinkle 4s infinite ease-in-out;
     box-shadow: 0 0 10px 2px rgba(255, 255, 255, 0.2);
+    transition: transform 0.1s ease-out;
 }
-
 .shooting-star {
     position: absolute;
-    width: 2px;
+    width: 1px;
     height: 2px;
     background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 50%, rgba(255,255,255,0) 100%);
+    box-shadow: 0 0 10px 2px rgba(255, 255, 255, 0.2);
     opacity: 0;
     transform: rotate(45deg);
-    animation: shoot 8s infinite linear;
+    border-radius: 50%;
+    z-index: -1;
+    animation: shoot 5s infinite linear, fade 3s ease-out forwards;
 }
 
 /* Main chart*/
@@ -232,7 +232,7 @@ header {
 .chart-container-circle {
     position: relative;
     width: 48%; 
-    height: auto;
+    height: 30rem;
     margin: .5rem 0; 
     overflow: hidden;
     display: flex;
@@ -263,7 +263,7 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 2rem;
+    padding: 0 2rem 0 2rem;
     margin-bottom: 2rem;
     order: 1;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3), 
@@ -327,6 +327,35 @@ header {
     text-align: left;
 }
 
+
+/*Table sorting*/
+.sort-controls {
+    position: absolute;
+    top: 0.2rem;
+    right: 1.5rem;
+    z-index: 5;
+}
+
+.select {
+    background-color: transparent;
+    border: transparent;
+    color: var(--text-color);
+    border-radius: 0.5rem;
+    padding: 0.3rem 0.8rem;
+    font-size: 0.9rem;
+    outline: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    appearance: none;
+}
+
+option{
+    background-color: var(--neon-purple);
+    color: #000;
+}
+
+
+
 /*Colors for the table economy cell*/
 .color {
     width: 100%;
@@ -362,18 +391,23 @@ header {
         transform: scale(1.2);
     }
 }
-
 @keyframes shoot {
     0% {
-        transform: translateX(-100px) translateY(100px) rotate(45deg);
-        opacity: 0;
-    }
-    10% {
+        transform: translate(0, 0) rotate(45deg);
         opacity: 1;
     }
-    20% {
-        transform: translateX(calc(100vw + 100px)) translateY(calc(-100vh - 100px)) rotate(45deg);
+    100% {
+        transform: translate(calc(100vw + 50px), calc(100vh + 50px)) rotate(45deg);
         opacity: 0;
+    }
+}
+
+@keyframes fade {
+    0% {
+        opacity: 1;
+    }
+    80% {
+        opacity: 0.5;
     }
     100% {
         opacity: 0;
@@ -430,5 +464,15 @@ header {
     }
     header {
         width: 90%;
+    }
+}
+
+@media (max-width: 768px) {
+    .sort-controls {
+        position: relative;
+        top: auto;
+        right: auto;
+        margin: 1rem auto;
+        text-align: center;
     }
 }

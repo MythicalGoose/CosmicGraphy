@@ -1,9 +1,9 @@
 document.addEventListener('DOMContentLoaded', function() {
     const cosmicBg = document.querySelector('.cosmic-bg');
-    const starCount = 100; //increased from 50 to 100 cuz 50 wasn't enough
+    const starCount = 100;
     const shootingStarCount = 5;
     
-    // Create stars
+    // Create the stars
     for (let i = 0; i < starCount; i++) {
         const star = document.createElement('div');
         star.classList.add('star');
@@ -23,45 +23,28 @@ document.addEventListener('DOMContentLoaded', function() {
         cosmicBg.appendChild(star);
     }
 
-    /* work in progress
-    // Create shooting stars \0/
+
+    // shooting stars!!!
     for (let i = 0; i < shootingStarCount; i++) {
         const shootingStar = document.createElement('div');
         shootingStar.classList.add('shooting-star');
         
-        const size = Math.random() * 60 + 40;
+        // Star sizes
+        const size = Math.random() * 10 + 5;
         shootingStar.style.width = size + 'px';
-        shootingStar.style.height = '2px';
-        
+        shootingStar.style.height = size / 2 + 'px';
+    
         shootingStar.style.left = Math.random() * 100 + '%';
         shootingStar.style.top = Math.random() * 100 + '%';
-        
-        // Random delays for shooting stars :O
-        shootingStar.style.animationDelay = (Math.random() * 15) + 's';
-        
+
+        // Animation timing
+        shootingStar.style.animationDelay = (Math.random() * 20) + 's';
+
+        shootingStar.style.animationDuration = (Math.random() * 5 + 5) + 's';
+
         cosmicBg.appendChild(shootingStar);
     }
-    */
-
-    /* work in progress
-    // Add subtle parallax effect to background
-    document.addEventListener('mousemove', function(e) {
-        const mouseX = e.clientX / window.innerWidth;
-        const mouseY = e.clientY / window.innerHeight;
-        
-        const stars = document.querySelectorAll('.star');
-        stars.forEach(star => {
-            const speed = parseFloat(star.style.width) * 0.5;
-            const offsetX = (mouseX - 0.5) * speed;
-            const offsetY = (mouseY - 0.5) * speed;
-            
-            star.style.transform = `translate(${offsetX}px, ${offsetY}px)`;
-        });
-    });
     
-    */
-    
-
     // Hover effect to table rows (love it)
     const tableRows = document.querySelectorAll('.t-row');
     tableRows.forEach(row => {
