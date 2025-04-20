@@ -1,4 +1,21 @@
-<h1 style="font-weight: bold"> 18/04/2025 </h1>
+<h1>Cosmic Graphy</h1>
+<h3>Nordpool data API (Krieviņa stundai)</h3>
+
+Cosmic Graphy is a Nordpool API data based site.<br>
+I got the insparations from- <br>
+
+     pintrest
+     
+     reddit (web development and web design)
+     
+     google (images)
+     
+     stackoverflow
+     
+     and mostly thought of the design my self :)
+
+<h2 style="font-weight: bold"> 18/04/2025 </h1>
+
 - Commited the site web or whatever you call it 👍<br>
 - Made the header<br>
 - Made a background that has random genered stars around (aka just dots but thats what stars are)<br>
@@ -7,3 +24,17 @@
 - Made a container for the chart<br>
 - Made the table, but still neeeds to be adjusted and some stuff added to it<br>
 - Made the containers have cool corner borders 💯<br>
+
+<h2 style="font-weight: bold"> 19/04/2025 </h1>
+
+- Added hover effects for containers<br>
+- Finished the table design<br>
+- Added the data from the API to the table (it was a bit of a pain)<br>
+- Made the site look less dull - <br>
+  * Changed how the stars generate a bit by making the sizes and animations times to be differnt<br>
+  * Added shooting stars (still in progress need to tweak it a bit to look good)<br>
+  * Adjusted the colors a bit to look better<br>
+  * Added better hover effects, like when you hover over a container it blurs a bit and they move a bit<br>
+  * Added a cool line under the sub title that chages size <br>
+
+- That's about it
